@@ -1,0 +1,132 @@
+# vim: syntax=gitconfig
+[core]
+	abbrev = 12
+	filemode = false
+	autocrlf = false
+
+	; get from https://github.com/mookid/diffr
+	; pager = diffr --colors --colors 'refine-removed:background:230,108,108:foreground:white:nobold' --colors 'refine-added:background:84,120,84:foreground:white:nobold' | less -R
+	; pager = delta
+
+[push]
+	#default = tracking
+	default = current
+
+[credential "https://github.com"]
+	username = difro
+
+[color]
+	diff = true
+	status = true
+	ui = true
+
+[color "diff"]
+	new	= bold green
+	old	= bold red
+	frag	= bold cyan
+
+[color "status"]
+	changed = bold red
+	added = bold green
+	untracked = dim white
+
+[alias]
+	oneline = log --graph --pretty=oneline
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lg3 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ai%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white) [%an]%C(reset)' --all
+	lg = !"git lg3"
+
+	# for github remotes
+	pr  = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+	# for bitbucket/stash remotes
+	spr  = "!f() { git fetch -fu ${2:-origin} refs/pull-requests/$1/from:pr/$1 && git checkout pr/$1; }; f"
+
+	# delete merged branch
+	dbr = !git branch --remote --merged | grep -v \"\\*\" | grep -v master | grep -v main | grep -v dev | xargs -n 1 git branch -dr
+	db = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v main | grep -v dev | xargs -n 1 git branch -d
+
+	# use delta pager side-by-side
+	diffside = -c core.pager=delta -c delta.side-by-side=true -c delta.max-line-length=0 -c delta.wrap-max-lines=unlimited diff
+	diffdelta = -c core.pager=delta -c delta.side-by-side=false -c delta.max-line-length=0 -c delta.wrap-max-lines=unlimited diff
+
+	# original
+	difforig = -c core.pager=less diff
+
+	# git switch master(or main)
+	sm = !git switch $(git branch -l main master --format '%(refname:short)')
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+
+[user]
+	name = Jihoon Chung
+	email = jihoon@gmail.com
+
+[branch]
+	autosetuprebase = always
+
+[commit]
+	verbose = true
+
+[http "https://gopkg.in"]
+	followRedirects = true
+
+[http]
+	followRedirects = true
+
+[hub]
+	host = oss.navercorp.com
+	protocol = https
+
+[fetch]
+	prune = true
+
+[pull]
+	ff = only
+
+[rerere]
+	enabled = true
+
+[diff]
+	colorMoved = default
+	algorithm = histogram
+
+[safe]
+	directory = .
+
+[merge]
+	conflictstyle = zdiff3
+
+[help]
+	autocorrect = prompt
+
+[interactive]
+	; diffFilter = diffr
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true  # use n and N to move between diff sections
+	features = difro
+
+	dark = true
+	line-numbers = true
+	side-by-side = false
+
+[credential "https://oss.navercorp.com"]
+	provider = github
+[credential "https://huggingface.co"]
+	provider = generic
+[credential]
+	helper = store
+[http "https://oss.navercorp.com"]
+	sslVerify = false
+
+[include]
+	path = ~/.gitconfig.local
+	path = ~/.gitconfig.themes

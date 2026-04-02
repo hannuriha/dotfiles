@@ -1,0 +1,90 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "413a24cb-a4dd-4931-96ef-e265c84ca50e",
+        "type": "model",
+        "color": "brightBlack",
+        "rawValue": true
+      },
+      {
+        "id": "fca95204-68ec-4114-adb0-70d1cf32890c",
+        "type": "thinking-effort",
+        "color": "magenta",
+        "rawValue": true
+      },
+      {
+        "id": "1",
+        "type": "flex-separator",
+        "color": "cyan"
+      },
+      {
+        "id": "41ce6808-278c-40b1-be69-efd9f3cf2b6f",
+        "type": "context-percentage",
+        "rawValue": true
+      },
+      {
+        "id": "361f8b52-6571-4d28-acbf-8944f8fd045e",
+        "type": "context-length",
+        "rawValue": true
+      },
+      {
+        "id": "f4471e71-c0a2-46fd-8026-7b51dd4f5037",
+        "type": "session-cost",
+        "color": "brightBlack",
+        "rawValue": true
+      },
+      {
+        "id": "757ddcb5-586a-4278-8055-b3f4a8533ebc",
+        "type": "version",
+        "color": "magenta",
+        "rawValue": false
+      }
+    ],
+    [
+      {
+        "id": "f9c41572-50c6-447b-8b4f-226b3036da48",
+        "type": "current-working-dir",
+        "color": "",
+        "rawValue": true,
+        "metadata": {
+          "fishStyle": "true"
+        }
+      },
+      {
+        "id": "9cc7718e-868b-4b05-90c4-be052291db00",
+        "type": "flex-separator"
+      },
+      {
+        "id": "3f498559-57c8-4459-9002-08905f75311d",
+        "type": "git-branch",
+        "color": "brightCyan"
+      },
+      {
+        "id": "0430c1f1-0c13-4160-bdfb-fb515bd24110",
+        "type": "git-changes"
+      }
+    ],
+    []
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60,
+  "colorLevel": 3,
+  "defaultPadding": " ",
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "powerline": {
+    "enabled": false,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": [],
+    "theme": "catppuccin",
+    "autoAlign": false
+  }
+}

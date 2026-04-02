@@ -1,0 +1,4 @@
+karabiner/automatic_backups
+tmux-client-*.log
+**/.claude/settings.local.json
+nix/secrets.conf

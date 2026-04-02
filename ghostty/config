@@ -1,0 +1,94 @@
+font-family = 
+# font-family = "MonaspiceAr NFM"
+# font-family = "InconsolataGo Nerd Font Mono"
+font-family = "Comic Mono"
+# font-family = "Google Sans Code Light"
+# font-family = "Cascadia Mono"
+# font-family = "Cascadia Code NF Regular"
+font-family = "D2Coding"
+
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+# font-size = 12.5
+font-size = 12
+adjust-cell-height = 10%
+# font-size = 15
+
+font-style-bold = false
+font-style-italic = false
+
+# theme = catppuccin-macchiato
+# theme = Dimidium
+# theme = vesper
+theme = "Catppuccin Mocha"
+# theme = Dracula
+# theme = "Everforest Dark - Hard"
+# theme = "tokyonight"
+
+# background-opacity = 0.95
+background-opacity = 0.85
+# background-blur-radius = 3
+background-blur = 10
+
+keybind = global:opt+grave_accent=toggle_quick_terminal
+keybind = global:cmd+ctrl+grave_accent=toggle_quick_terminal
+keybind = ctrl+[=text:\x1b
+
+# send cmd-p as opt-p (for tmux ignores cmd-p)
+keybind = "cmd+p=text:\x1bp"
+
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+
+# for tmux pane layout switching
+keybind = cmd+digit_1=esc:1
+keybind = cmd+digit_2=esc:2
+keybind = cmd+digit_3=esc:3
+keybind = cmd+digit_4=esc:4
+keybind = cmd+digit_5=esc:5
+keybind = cmd+digit_6=esc:6
+keybind = cmd+digit_7=esc:7
+
+keybind = cmd+shift+b=toggle_background_opacity
+
+keybind = unconsumed:page_down=scroll_page_lines:28
+keybind = unconsumed:page_up=scroll_page_lines:-28
+
+quick-terminal-position = center
+# quick-terminal-position = right
+quick-terminal-autohide = false
+quick-terminal-animation-duration = 0.2
+quick-terminal-size = 80%,80%
+
+macos-titlebar-style = tabs
+# macos-titlebar-style = transparent
+# macos-titlebar-style = hidden
+# macos-titlebar-style = native
+window-decoration = true
+
+window-save-state = never
+
+window-title-font-family = "D2Coding"
+
+macos-option-as-alt = true
+
+macos-non-native-fullscreen = true
+
+confirm-close-surface = false
+
+shell-integration = bash
+shell-integration-features = no-cursor
+
+cursor-opacity = 0.8
+cursor-text = black
+cursor-style = block
+
+foreground = #ffffff
+
+undo-timeout = 300s
+
+# include per-host config
+# config-file = ?local.config
+keybind = shift+enter=text:\x1b\r
