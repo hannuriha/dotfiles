@@ -13,7 +13,7 @@
 	default = current
 
 [credential "https://github.com"]
-	username = difro
+	username = hannuriha
 
 [color]
 	diff = true
