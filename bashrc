@@ -145,6 +145,24 @@ alias brewup='brew bundle --file=~/.dotfiles/Brewfile'
 alias dotfiles_update='cd ~/.dotfiles && git pull --ff-only && git submodule update --remote --merge && cd -'
 
 #-------------------------------------------------------------------------------
+# ALIASES (godinus)
+#-------------------------------------------------------------------------------
+alias ps='ps kstart_time'
+alias rm='rm -v'
+alias cp='cp -v'
+alias mv='mv -v'
+alias ls='ls -aF --show-control-chars --color=auto'
+alias ll='ls -al'
+alias l='ls -al'
+
+alias trimspace="sed 's/ \\+/ /g;s/^ \\| \$//g'"
+alias rmvspace="tr -d ' '"
+
+alias git_grep='git branch | tr -d \* | xargs git grep'
+
+alias gd='ssh dev-godinus.ncl'
+
+#-------------------------------------------------------------------------------
 # KEYBINDINGS
 #-------------------------------------------------------------------------------
 set -o vi
