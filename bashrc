@@ -117,6 +117,10 @@ copus() { claude --dangerously-skip-permissions --no-session-persistence -p "$*"
 alias claude='claude --effort max'
 alias claude-danger='claude --dangerously-skip-permissions --effort max'
 alias claude-grafana='claude --dangerously-skip-permissions --effort max "/grafana-ops"'
+#
+# hannuriha
+alias claude='claude-latest --effort max'
+alias codex='codex-latest codex --dangerously-bypass-approvals-and-sandbox -c \\'model_reasoning_effort="xhigh"\\''
 
 alias unicodedecode="sed 's/.*/\"&\"/' | jq -r ."
 alias curlheader='curl -s -D - -o /dev/null'
@@ -283,6 +287,13 @@ nix-darwin-update() {
 if [ -f "$HOME/.bashrc.$(hostname -s)" ]; then
     # shellcheck source=/dev/null
     source "$HOME/.bashrc.$(hostname -s)"
+fi
+
+#-------------------------------------------------------------------------------
+# LOCAL/LOCAL OVERRIDES
+#-------------------------------------------------------------------------------
+if [ -f "$HOME/.bashrc.local" ]; then
+    source "$HOME/.bashrc.local"
 fi
 
 #-------------------------------------------------------------------------------

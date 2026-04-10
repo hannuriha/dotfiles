@@ -13,7 +13,7 @@
 	default = current
 
 [credential "https://github.com"]
-	username = difro
+	username = hannuriha
 
 [color]
 	diff = true
@@ -65,8 +65,8 @@
 	process = git-lfs filter-process
 
 [user]
-	name = Jihoon Chung
-	email = jihoon@gmail.com
+	name = Hannuri Ha
+	email = godinus@naver.com
 
 [branch]
 	autosetuprebase = always
@@ -79,10 +79,6 @@
 
 [http]
 	followRedirects = true
-
-[hub]
-	host = oss.navercorp.com
-	protocol = https
 
 [fetch]
 	prune = true
@@ -101,7 +97,15 @@
 	directory = .
 
 [merge]
-	conflictstyle = zdiff3
+	conflictStyle = zdiff3
+	tool = nvim
+
+[mergetool]
+	keepBackup = false
+	prompt = false
+
+[mergetool "nvim"]
+	cmd = nvim -d -c \"wincmd J\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
 
 [help]
 	autocorrect = prompt
@@ -118,15 +122,12 @@
 	line-numbers = true
 	side-by-side = false
 
-[credential "https://oss.navercorp.com"]
-	provider = github
 [credential "https://huggingface.co"]
 	provider = generic
 [credential]
 	helper = store
-[http "https://oss.navercorp.com"]
-	sslVerify = false
 
 [include]
+	path = ~/.gitconfig.base.local
 	path = ~/.gitconfig.local
 	path = ~/.gitconfig.themes
