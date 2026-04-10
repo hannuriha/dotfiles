@@ -6,8 +6,8 @@
 }:
 
 {
-  home.username = "jihoonc";
-  home.homeDirectory = "/Users/jihoonc";
+  home.username = "godinus";
+  home.homeDirectory = "/Users/godinus";
 
   # Packages only for macOS
   home.packages = [
