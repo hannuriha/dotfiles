@@ -567,6 +567,9 @@ local plugins = {
         open_in_new_tab = true,
         keep_terminal_focus = true,
       },
+
+      -- hannuriha
+      terminal_cmd = "claude --dangerously-skip-permissions --effort max",
     },
   },
 
